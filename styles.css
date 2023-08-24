@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600&display=swap");
+
+:root {
+  --mobile-bp: 375px;
+  --bg-color: hsl(210, 46%, 95%);
+  --lght-gray-blue: hsl(210, 46%, 95%);
+  --violet: hsl(263, 55%, 52%);
+  --white: hsl(0, 0%, 100%);
+  --drk-gray-blue: hsl(217, 19%, 35%);
+  --drk-black-blue: hsl(219, 29%, 14%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  align-items: center;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 13px;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 375px;
+  width: 100%;
+}
+
+.card {
+  box-shadow: 1.8px 3.7px 3.7px hsl(0deg 0% 0% / 0.2);
+  color: var(--white);
+  max-width: 331px;
+  padding: 32px;
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 22px;
+}
+
+.card__header-logo {
+  grid-row: 1 / span 2;
+}
+
+.card__header-logo img {
+  border-radius: 50%;
+  max-width: 35px;
+  margin-right: 16px;
+}
+
+.card__header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.card__header-title {
+  font-weight: 600;
+}
+
+.card__header-verified-grad {
+  opacity: 0.5;
+}
+
+.card__title {
+  font-size: 21px;
+  margin: 24px 0;
+}
+
+.card__description {
+  opacity: 70%;
+}
+
+.card--violet {
+  background-color: var(--violet);
+}
+
+.card--drk-gray {
+  background-color: var(--drk-gray-blue);
+}
+
+.card--white {
+  background-color: var(--white);
+  color: var(--drk-black-blue);
+}
+
+.card--drk-blue {
+  background-color: var(--drk-black-blue);
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    align-items: unset;
+    max-width: 1112px;
+    max-height: 572px;
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .card {
+    margin-bottom: 0;
+    max-width: 100%;
+  }
+
+  .card--dan {
+    grid-column: 1 / span 2;
+  }
+
+  .card--kira{
+    grid-row: 1 / span 2;
+    grid-column: -2;
+  }
+
+  .card--patrick {
+    grid-column: 2 / span 2;
+  }
+}
